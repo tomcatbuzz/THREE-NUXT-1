@@ -1,0 +1,16 @@
+{
+  "name": "three-nuxt-1",
+  "version": "1.0.0",
+  "description": "THREEjs, GSAP, Nuxt demo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "THREEJS",
+    "GSAP",
+    "Nuxt"
+  ],
+  "author": "Anthony Buzzelli",
+  "license": "ISC"
+}
