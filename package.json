@@ -1,16 +1,17 @@
 {
-  "name": "three-nuxt-1",
-  "version": "1.0.0",
-  "description": "THREEjs, GSAP, Nuxt demo",
-  "main": "app.js",
+  "name": "three-nuxt1",
+  "private": true,
+  "version": "0.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [
-    "THREEJS",
-    "GSAP",
-    "Nuxt"
-  ],
-  "author": "Anthony Buzzelli",
-  "license": "ISC"
+  "devDependencies": {
+    "dat.gui": "^0.7.9",
+    "vite": "^2.9.0"
+  },
+  "dependencies": {
+    "three": "^0.139.2"
+  }
 }
