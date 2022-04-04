@@ -101,6 +101,25 @@ const light = new THREE.DirectionalLight(0xffffff, 1)
 light.position.set(0, -1, 1)
 scene.add(light)
 
+const starGeometry = new THREE.BufferGeometry()
+const starMaterial = new THREE.PointsMaterial({
+  color: 0xffffff
+})
+
+const starVertices = []
+for (let i = 0; i < 10000; i++) {
+  const x = (Math.random() - 0.5) * 2000
+  const y = (Math.random() - 0.5) * 2000
+  const z = (Math.random() - 0.5) * 2000
+  starVertices.push(x, y, z)
+}
+
+starGeometry.setAttribute('position', 
+  new THREE.Float32BufferAttribute(starVertices, 3))
+
+const stars = new THREE.Points(starGeometry, starMaterial)
+scene.add(stars)
+
 
 // const boxGeometry = new THREE.BoxGeometry(1, 1, 1)
 // const material = new THREE.MeshBasicMaterial({color: 0x00FF00})
@@ -192,17 +211,28 @@ function animate() {
     })
   }
   
-  // mesh.rotation.x += 0.01
-  // mesh.rotation.y += 0.01
-  // planeMesh.rotation.x += 0.01
+  stars.rotateX(0.0005)
 }
 
 animate()
-
-
 
 addEventListener('mousemove', (e) => {
   mouse.x = (e.clientX / innerWidth) * 2 - 1
   mouse.y = -(e.clientY / innerHeight) * 2 + 1
   // console.log(mouse)
+})
+
+gsap.to('#name', {
+  opacity: 1,
+  duration: 2,
+})
+gsap.to('#headline', {
+  opacity: 1,
+  duration: 2,
+  delay: 0.3
+})
+gsap.to('#button', {
+  opacity: 1,
+  duration: 2,
+  delay: 0.6
 })
