@@ -148,7 +148,7 @@ function animate() {
   }
   planeMesh.geometry.attributes.position.needsUpdate = true
 
-  planeMesh.rotateX(-0.0005) 
+  // planeMesh.rotateX(-0.0005) 
 
 
 
@@ -224,15 +224,54 @@ addEventListener('mousemove', (e) => {
 
 gsap.to('#name', {
   opacity: 1,
-  duration: 2,
+  duration: 1.5,
+  y: 0,
+  ease: 'power2.out'
 })
 gsap.to('#headline', {
   opacity: 1,
-  duration: 2,
-  delay: 0.3
+  duration: 1.5,
+  delay: 0.3,
+  y: 0,
+  ease: 'power2.out'
 })
 gsap.to('#button', {
   opacity: 1,
-  duration: 2,
-  delay: 0.6
+  duration: 1.5,
+  delay: 0.6,
+  y: 0,
+  ease: 'power2.out'
 })
+
+document.getElementById('button').
+  addEventListener('click', (e) => {
+    e.preventDefault()
+    gsap.to('.headline', {
+      opacity: 0
+    })
+    gsap.to(camera.position, {
+      z: 25,
+      ease: 'power4.inOut',
+      duration: 2
+    })
+    gsap.to(camera.rotation, {
+      x: 1.57,
+      ease: 'power4.inOut',
+      duration: 2
+    })
+    gsap.to(camera.position, {
+      y: 1000,
+      ease: 'power1.in',
+      duration: 1.5,
+      delay: 2,
+      onComplete: () => {
+        window.location = 'https://anthonybuzzelli.dev'
+      }
+    })
+  })
+
+  addEventListener('resize', () => {
+    camera.aspect = innerWidth / innerHeight
+    camera.updateProjectionMatrix()
+    renderer.setSize(innerWidth, innerHeight)
+  })

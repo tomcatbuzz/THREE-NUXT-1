@@ -25,6 +25,7 @@ h1 {
   text-transform: uppercase;
   color: rgb(157, 151, 151);
   opacity: 0;
+  transform: translateY(30px);
 }
 
 p {
@@ -33,6 +34,7 @@ p {
   font-weight: 600;
   line-height: 1;
   opacity: 0;
+  transform: translateY(30px);
 }
 
 button {
@@ -41,16 +43,34 @@ button {
   text-transform: uppercase;
   background-color: transparent;
   color: rgb(157, 151, 151);
-  font-size: 2em;
+  font-size: 1.5em;
   padding: 0.5em;
   padding-top: 0.3em;
   padding-bottom: 0.3em;
   border-color: rgb(157, 151, 151);
   border-radius: 0.25em;
   opacity: 0;
+  transform: translateY(30px);
 }
 
 button:hover {
   background-color: white;
   color: rgb(157, 151, 151);
+}
+
+button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.2em;
+  }
+  p {
+    font-size: 2.5em;
+  }
+  button {
+    font-size: 1.2em;
+  }
 }

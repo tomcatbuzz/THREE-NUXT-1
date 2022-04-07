@@ -1,6 +1,6 @@
-# THREE JS and Nuxt
+# THREE JS and Vite
 
-_THREEJS, GSAP, and Nuxt_
+_THREEJS, GSAP, and Vite_
 
 
 ## Useful commands
